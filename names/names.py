@@ -19,6 +19,7 @@ f.close()
 
 # NEW NOT SO SLOW SOLUTION
 
+
 class BinarySearchTree:
     def __init__(self, value):
         self.value = value
@@ -53,9 +54,10 @@ class BinarySearchTree:
 
 
 duplicates = []
-binary = BinarySearchTree(names_1)
+binary = BinarySearchTree(names_1[0])
 for name in names_1:
-    binary.insert(name)
+    if name != names_1[0]:
+        binary.insert(name)
 for name in names_2:
     if binary.contains(name):
         duplicates.append(name)
